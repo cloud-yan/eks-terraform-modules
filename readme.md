@@ -26,21 +26,25 @@ This project provisions an AWS Elastic Kubernetes Service (EKS) cluster and Virt
 ## Usage
 
 1. **Initialize Terraform**:
+
    ```bash
    terraform init
    ```
 
 2. **Plan the Infrastructure**:
+
    ```bash
    terraform plan
    ```
 
 3. **Apply the Configuration**:
+
    ```bash
    terraform apply
    ```
 
 4. **Destroy the Infrastructure** (when no longer needed):
+
    ```bash
    terraform destroy
    ```
@@ -48,9 +52,11 @@ This project provisions an AWS Elastic Kubernetes Service (EKS) cluster and Virt
 ## Modules Used
 
 ### VPC Module
+
 The VPC module is sourced from the [AWS VPC Terraform Module](https://github.com/terraform-aws-modules/terraform-aws-vpc). It creates a VPC with public and private subnets, NAT gateways, and other networking resources.
 
 ### EKS Module
+
 The EKS module is sourced from the [AWS EKS Terraform Module](https://github.com/terraform-aws-modules/terraform-aws-eks). It provisions an EKS cluster with managed node groups and optional Fargate profiles.
 
 ## Inputs
@@ -77,7 +83,9 @@ The project provides the following outputs defined in `outputs.tf`:
 ## Examples
 
 ### Deploying the EKS Cluster
+
 To deploy the EKS cluster with default settings:
+
 ```hcl
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
@@ -91,7 +99,9 @@ module "eks" {
 ```
 
 ### Creating a VPC
+
 To create a VPC with public and private subnets:
+
 ```hcl
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
